@@ -35,6 +35,7 @@ public class GetDeckController implements ActionListener {
 	 * Retrieves the singleton instance of the DeckController, or creates it if
 	 * it does not yet exist.
 	 * 
+	 * 
 	 * @return the singleton instance of the DeckController
 	 */
 	public static GetDeckController getInstance() {
@@ -55,6 +56,7 @@ public class GetDeckController implements ActionListener {
 	 * 
 	 * @param e
 	 *            the ActionEvent that occurs
+	 * 
 	 * 
 	 * @see java.awt.event.ActionListener#actionPerformed(ActionEvent)
 	 */

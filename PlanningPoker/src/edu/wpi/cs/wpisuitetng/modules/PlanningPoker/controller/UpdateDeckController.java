@@ -32,8 +32,8 @@ public class UpdateDeckController {
 	 * Returns the singleton instance of the UpdateDeckController, or creates it
 	 * if one does not yet exist.
 	 * 
-	 * @return the singleton instance of the UpdateDeckController
-	 */
+	
+	 * @return the singleton instance of the UpdateDeckController */
 	public static UpdateDeckController getInstance() {
 		if (instance == null)
 			instance = new UpdateDeckController();
@@ -47,6 +47,10 @@ public class UpdateDeckController {
 		observer = new UpdateDeckRequestObserver(this);
 	}
 	
+	/**
+	 * Method updateDeck.
+	 * @param newDeck Deck
+	 */
 	public void updateDeck(Deck newDeck) {
 		Request request = Network.getInstance().makeRequest("planningpoker/deck", HttpMethod.POST);
 		request.setBody(newDeck.toJSON()); // put the new Deck into the request

@@ -31,8 +31,8 @@ public class AddDeckController {
 	 * Returns the singleton instance of the AddDeckController, or creates it if
 	 * it does not yet exist.
 	 * 
-	 * @return the singleton instance of the addDeckController
-	 */
+	
+	 * @return the singleton instance of the addDeckController */
 	public static AddDeckController getInstance() {
 		if (instance == null)
 			instance = new AddDeckController();
@@ -44,6 +44,10 @@ public class AddDeckController {
 		observer = new AddDeckRequestObserver(this);
 	}
 
+	/**
+	 * Method addDeck.
+	 * @param newDeck Deck
+	 */
 	public void addDeck(Deck newDeck) {
 		final Request request = Network.getInstance().makeRequest(
 				"planningpoker/deck", HttpMethod.PUT); // PUT == create

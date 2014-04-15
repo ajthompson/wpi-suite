@@ -14,9 +14,17 @@ import java.awt.Image;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+/**
+ * @author Miguel
+ * @version $Revision: 1.0 $
+ */
 public class CardImgPanel extends JPanel {
     private Image img;
     
+    /**
+     * Method paintComponent.
+     * @param g Graphics
+     */
     @Override   
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

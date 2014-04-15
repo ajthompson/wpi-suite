@@ -1,12 +1,13 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2012-2014 -- WPI Suite
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
- ******************************************************************************/
+ * Contributors: team struct-by-lightning
+ *******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.deck;
 
 import java.util.ArrayList;
@@ -20,7 +21,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
 import edu.wpi.cs.wpisuitetng.modules.AbstractModel;
-import edu.wpi.cs.wpisuitetng.modules.RegularAbstractModel;
 import edu.wpi.cs.wpisuitetng.modules.PlanningPoker.models.DeckDeserializer;
 import edu.wpi.cs.wpisuitetng.modules.PlanningPoker.models.DeckSerializer;
 
@@ -30,7 +30,7 @@ import edu.wpi.cs.wpisuitetng.modules.PlanningPoker.models.DeckSerializer;
  * @author Alec Thompson - ajthompson
  * @version Apr 10, 2014
  */
-public class Deck extends RegularAbstractModel<Deck> {
+public class Deck extends AbstractModel {
 	/** The name of the deck */
 	private String deckName;
 	/** The numbers for the cards in the decks */
@@ -73,6 +73,12 @@ public class Deck extends RegularAbstractModel<Deck> {
 		this.sortDeck();
 	}
 
+	/**
+	 * Method addCard.
+	 * 
+	 * @param card
+	 *            Integer
+	 */
 	public void addCard(Integer card) {
 		// create the list if cards is null
 		if (this.cards == null)
@@ -81,6 +87,12 @@ public class Deck extends RegularAbstractModel<Deck> {
 		this.sortDeck();
 	}
 
+	/**
+	 * Method removeCard.
+	 * 
+	 * @param card
+	 *            Integer
+	 */
 	public void removeCard(Integer card) {
 		// removes the card if cards is not null
 		if (this.cards != null)
@@ -97,6 +109,7 @@ public class Deck extends RegularAbstractModel<Deck> {
 	}
 
 	/**
+	 * 
 	 * @return the deckName
 	 */
 	public String getDeckName() {
@@ -104,6 +117,7 @@ public class Deck extends RegularAbstractModel<Deck> {
 	}
 
 	/**
+	 * 
 	 * @return the list of cards
 	 */
 	public List<Integer> getCards() {
@@ -127,9 +141,29 @@ public class Deck extends RegularAbstractModel<Deck> {
 	}
 
 	/**
+	 * Converts the list of cards to a string
+	 * 
+	 * 
+	 * 
+	 * @return the string representing the list of cards * @see
+	 *         edu.wpi.cs.wpisuitetng.modules.Model#toString() * @see
+	 *         edu.wpi.cs.wpisuitetng.modules.Model#toString()
+	 */
+	@Override
+	public String toString() {
+		return this.deckName;
+	}
+
+	// Serializing
+
+	/**
 	 * Serializes this Deck into a JSON string.
 	 * 
-	 * @return the JSON representation of this Deck
+	 * 
+	 * 
+	 * @return the JSON representation of this Deck * @see
+	 *         edu.wpi.cs.wpisuitetng.modules.Model#toJSON() * @see
+	 *         edu.wpi.cs.wpisuitetng.modules.Model#toJSON()
 	 */
 	public String toJSON() {
 		String json;
@@ -147,6 +181,7 @@ public class Deck extends RegularAbstractModel<Deck> {
 	 * 
 	 * @param d
 	 *            an array of Decks
+	 * 
 	 * @return the serialized array of Decks
 	 */
 	public static String toJSON(Deck[] d) {
@@ -166,6 +201,7 @@ public class Deck extends RegularAbstractModel<Deck> {
 	 * 
 	 * @param json
 	 *            the JSON string to user
+	 * 
 	 * @return the reconstructed Deck
 	 */
 	public static Deck fromJSON(String json) {
@@ -178,6 +214,7 @@ public class Deck extends RegularAbstractModel<Deck> {
 	 * 
 	 * @param jsonArr
 	 *            the JSON array to deserialize
+	 * 
 	 * @return an array of reconstructed decks
 	 */
 	public static Deck[] fromJsonArray(String jsonArr) {
@@ -215,24 +252,6 @@ public class Deck extends RegularAbstractModel<Deck> {
 	 */
 	@Override
 	public Boolean identify(Object o) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getID() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setID(String toSet) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public String getPrimaryKey() {
 		// TODO Auto-generated method stub
 		return null;
 	}

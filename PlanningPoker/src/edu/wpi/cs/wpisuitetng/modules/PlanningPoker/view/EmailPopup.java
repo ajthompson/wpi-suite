@@ -1,12 +1,13 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2012-2014 -- WPI Suite
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
- ******************************************************************************/
+ * Contributors: team struct-by-lightning
+ *******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.view;
 
 import java.util.List;
@@ -51,7 +52,9 @@ public class EmailPopup {
 	 * 
 	 * This is for use in NewGameTab, to run after a list of users have already
 	 * been retrieved, for efficiency reasons.
-	 */
+	 * @param userList List<User>
+	
+	 * @return List<User> */
 	public static List<User> checkUserEmail(List<User> userList) {
 		if (instance == null)
 			instance = new EmailPopup();
@@ -67,8 +70,9 @@ public class EmailPopup {
 	/**
 	 * Checks if a user has an email address.
 	 * 
-	 * @return false if the user's email is null, otherwise true.
-	 */
+	
+	 * @param user User
+	 * @return false if the user's email is null, otherwise true. */
 	private boolean hasEmail(User user) {
 		if (user.getEmail() == null)
 			return false;
@@ -115,8 +119,8 @@ public class EmailPopup {
 	 * 
 	 * @param userList
 	 *            the list of users retrieved from the server.
-	 * @return the list of users updated with the user's new email address.
-	 */
+	
+	 * @return the list of users updated with the user's new email address. */
 	private List<User> run(List<User> userList) {
 		User user;
 		String newEmail = null;
@@ -152,8 +156,8 @@ public class EmailPopup {
 	 * Retrieves the list of users from the server, and finds the currently
 	 * logged in user, which is then returned.
 	 * 
-	 * @return the currently logged in user.
-	 */
+	
+	 * @return the currently logged in user. */
 	private User findUser() {
 		GetUserController.getInstance().retrieveUser();
 
@@ -177,8 +181,8 @@ public class EmailPopup {
 	 *            The list of users, retrieved from the server
 	 * @param username
 	 *            The username of the desired user
-	 * @return the user with the given username
-	 */
+	
+	 * @return the user with the given username */
 	private User findUser(List<User> userList, String username) {
 		for (User u : userList) {
 			if (u.getUsername().equals(username))

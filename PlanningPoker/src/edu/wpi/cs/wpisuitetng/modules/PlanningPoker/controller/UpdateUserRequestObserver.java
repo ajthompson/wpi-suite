@@ -1,12 +1,13 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2012-2014 -- WPI Suite
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
- ******************************************************************************/
+ * Contributors: team struct-by-lightning
+ *******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.controller;
 
 import edu.wpi.cs.wpisuitetng.modules.core.models.User;
@@ -41,8 +42,8 @@ public class UpdateUserRequestObserver implements RequestObserver {
 	 * @param iReq
 	 *            the request that was sent.
 	 * 
-	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseSuccess(edu.wpi.cs.wpisuitetng.network.models.IRequest)
-	 */
+	
+	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseSuccess(edu.wpi.cs.wpisuitetng.network.models.IRequest) */
 	@Override
 	public void responseSuccess(IRequest iReq) {
 		// Get the response to the given request
@@ -58,8 +59,8 @@ public class UpdateUserRequestObserver implements RequestObserver {
 	 * @param iReq
 	 *            the request that was made
 	 * 
-	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseError(edu.wpi.cs.wpisuitetng.network.models.IRequest)
-	 */
+	
+	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseError(edu.wpi.cs.wpisuitetng.network.models.IRequest) */
 	@Override
 	public void responseError(IRequest iReq) {
 		System.err.println(iReq.getResponse().getStatusMessage());
@@ -74,9 +75,9 @@ public class UpdateUserRequestObserver implements RequestObserver {
 	 * @param exception
 	 *            the exception that occurred.
 	 * 
+	
 	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#fail(edu.wpi.cs.wpisuitetng.network.models.IRequest,
-	 *      java.lang.Exception)
-	 */
+	 *      java.lang.Exception) */
 	@Override
 	public void fail(IRequest iReq, Exception exception) {
 		System.err.println("The request to update a requirement failed.");

@@ -1,11 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2013 WPI-Suite
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
+ * Contributors: Struct-By-Lightning
  ******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.view;
 
@@ -25,6 +25,7 @@ import javax.swing.JTabbedPane;
 /**
  * This class closes open tabs
  * @author bnurbekov
+ * @version $Revision: 1.0 $
  */
 @SuppressWarnings("serial")
 public class ClosableTabComponent extends JPanel implements ActionListener {
@@ -69,8 +70,8 @@ public class ClosableTabComponent extends JPanel implements ActionListener {
 	/**
 	 * Removes tab at the selected index on action event
 	 * @param e ActionEvent The event that occurred 
-	 * @see java.awt.event.ActionListener#actionPerformed(ActionEvent) 
-	 * */
+	
+	 * * @see java.awt.event.ActionListener#actionPerformed(ActionEvent)  */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// close this tab when close button is clicked

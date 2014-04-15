@@ -44,9 +44,9 @@ public class UpdateDeckRequestObserver implements RequestObserver {
 	 * @param iReq
 	 *            the request that was made to the server
 	 * 
+	
 	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseSuccess(edu.wpi
-	 *      .cs.wpisuitetng.network.models.IRequest)
-	 */
+	 *      .cs.wpisuitetng.network.models.IRequest) */
 	@Override
 	public void responseSuccess(IRequest iReq) {
 		// Get the response to the given request
@@ -62,9 +62,9 @@ public class UpdateDeckRequestObserver implements RequestObserver {
 	 * @param iReq
 	 *            the request sent to the server
 	 * 
+	
 	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseError(edu.wpi.
-	 *      cs.wpisuitetng.network.models.IRequest)
-	 */
+	 *      cs.wpisuitetng.network.models.IRequest) */
 	@Override
 	public void responseError(IRequest iReq) {
 		System.err.println(iReq.getResponse().getStatusMessage());
@@ -80,9 +80,9 @@ public class UpdateDeckRequestObserver implements RequestObserver {
 	 * @param exception
 	 *            the Exception that was thrown
 	 * 
+	
 	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#fail(edu.wpi.cs.wpisuitetng
-	 *      .network.models.IRequest, java.lang.Exception)
-	 */
+	 *      .network.models.IRequest, java.lang.Exception) */
 	@Override
 	public void fail(IRequest iReq, Exception exception) {
 		System.err.println("The request to update a Deck failed.");

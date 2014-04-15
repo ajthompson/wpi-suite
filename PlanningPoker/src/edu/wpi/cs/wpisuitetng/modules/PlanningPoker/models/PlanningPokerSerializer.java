@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
- ******************************************************************************/
+* Copyright (c) 2012-2014 -- WPI Suite
+*
+* All rights reserved. This program and the accompanying materials
+* are made available under the terms of the Eclipse Public License v1.0
+* which accompanies this distribution, and is available at
+* http://www.eclipse.org/legal/epl-v10.html
+* Contributor: team struct-by-lightning
+*******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.models;
 
 import java.lang.reflect.Type;
@@ -20,8 +20,19 @@ import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
+/**
+ * @author Miguel
+ * @version $Revision: 1.0 $
+ */
 public class PlanningPokerSerializer implements JsonSerializer<PlanningPokerGame> {
 
+	/**
+	 * Method serialize.
+	 * @param m PlanningPokerGame
+	 * @param t Type
+	 * @param context JsonSerializationContext
+	
+	 * @return JsonElement */
 	@Override
 	public JsonElement serialize(PlanningPokerGame m, Type t, JsonSerializationContext context) {
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");

@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2012-2014 -- WPI Suite
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
- ******************************************************************************/
+ * Contributor: team struct-by-lightning
+ *******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.email;
 
 import java.util.List;
@@ -38,6 +38,7 @@ import edu.wpi.cs.wpisuitetng.modules.core.models.User;
  * 
  * @author Alec Thompson
  * @author Long Nguyen
+ * @version $Revision: 1.0 $
  */
 public class Mailer {
 	private Session session;
@@ -112,8 +113,8 @@ public class Mailer {
 	 * Alternate constructor that takes an array of email addresses as a
 	 * parameter
 	 * 
-	 * @param emailAddress
-	 *            Hard-coded email address
+	
+	 * @param emailArray String[]
 	 */
 	public Mailer(String[] emailArray) {
 		session = createSmtpSession();
@@ -142,8 +143,8 @@ public class Mailer {
 	 * Creates an SMTP session, configured for using the Google SMTP server with
 	 * the Struct by Lightning gmail account being used to send the emails
 	 * 
-	 * @return Google SMTP session
-	 */
+	
+	 * @return Google SMTP session */
 	private Session createSmtpSession() {
 		// final version settings
 		if (DEBUG) {
@@ -179,8 +180,8 @@ public class Mailer {
 	/**
 	 * Sends the email to the added recipients
 	 * 
-	 * @return true if the email sends, false otherwise
-	 */
+	
+	 * @return true if the email sends, false otherwise */
 	public boolean send() {
 		try {
 			if (DEBUG)
@@ -209,8 +210,8 @@ public class Mailer {
 	 * 
 	 * @param recipient
 	 *            The target's email address
-	 * @return true if the recipient is added, false otherwise
-	 */
+	
+	 * @return true if the recipient is added, false otherwise */
 	public boolean addEmail(String recipient) {
 		try {
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(
@@ -228,8 +229,8 @@ public class Mailer {
 	 * 
 	 * @param recArr
 	 *            Array of email addresses (strings!)
-	 * @return true if all addresses were added successfully, false otherwise
-	 */
+	
+	 * @return true if all addresses were added successfully, false otherwise */
 	public boolean addEmailArray(String[] recArr) {
 		boolean isSuccess = true;
 		for (String s : recArr) {
@@ -238,6 +239,11 @@ public class Mailer {
 		return isSuccess;
 	}
 
+	/**
+	 * Method addEmailFromUsers.
+	 * @param userList List<User>
+	
+	 * @return boolean */
 	public boolean addEmailFromUsers(List<User> userList) {
 		boolean isSuccess = true;
 		for (User u : userList) {

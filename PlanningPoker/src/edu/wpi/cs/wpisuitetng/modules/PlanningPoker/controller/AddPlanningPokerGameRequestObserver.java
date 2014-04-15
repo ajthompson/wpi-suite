@@ -17,26 +17,30 @@ import edu.wpi.cs.wpisuitetng.network.models.IRequest;
 import edu.wpi.cs.wpisuitetng.network.models.ResponseModel;
 
 /**
- * This observer is called when a response is received from a request
- * to the server to add a planning poker game.
+ * This observer is called when a response is received from a request to the
+ * server to add a planning poker game.
+ * 
  * @version $Revision: 1.0 $
  * @author justinhess
  */
 public class AddPlanningPokerGameRequestObserver implements RequestObserver {
-		
+
 	private AddPlanningPokerGameController controller;
-	
+
 	/**
 	 * Constructs the observer given an AddPlanningPokerGameController
-	 * @param controller the controller used to add PlanningPokerGames
+	 * 
+	 * @param controller
+	 *            the controller used to add PlanningPokerGames
 	 */
-	public AddPlanningPokerGameRequestObserver(AddPlanningPokerGameController controller) {
+	public AddPlanningPokerGameRequestObserver(
+			AddPlanningPokerGameController controller) {
 		this.controller = controller;
 	}
-	
+
 	/**
-	 * Parse the PlanningPokerGame that was received from the server then pass them to
-	 * the controller.
+	 * Parse the PlanningPokerGame that was received from the server then pass
+	 * them to the controller.
 	 * 
 	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseSuccess(edu.wpi.cs.wpisuitetng.network.models.IRequest)
 	 */
@@ -44,29 +48,38 @@ public class AddPlanningPokerGameRequestObserver implements RequestObserver {
 	public void responseSuccess(IRequest iReq) {
 		// Get the response to the given request
 		final ResponseModel response = iReq.getResponse();
-		
+
 		// Parse the PlanningPokerGame out of the response body
-		final PlanningPokerGame planningPokerGame = PlanningPokerGame.fromJSON(response.getBody());
+		final PlanningPokerGame planningPokerGame = PlanningPokerGame
+				.fromJSON(response.getBody());
 	}
 
 	/**
-	 * Takes an action if the response results in an error.
-	 * Specifically, outputs that the request failed.
-	 * @param iReq IRequest
-	
-	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseError(IRequest) */
+	 * Takes an action if the response results in an error. Specifically,
+	 * outputs that the request failed.
+	 * 
+	 * @param iReq
+	 *            IRequest
+	 * 
+	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseError(IRequest)
+	 */
 	@Override
 	public void responseError(IRequest iReq) {
 		System.err.println("The request to add a PlanningPokerGame failed.");
 	}
 
 	/**
-	 * Takes an action if the response fails.
-	 * Specifically, outputs that the request failed.
-	 * @param iReq IRequest
-	 * @param exception Exception
-	
-	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#fail(IRequest, Exception) */
+	 * Takes an action if the response fails. Specifically, outputs that the
+	 * request failed.
+	 * 
+	 * @param iReq
+	 *            IRequest
+	 * @param exception
+	 *            Exception
+	 * 
+	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#fail(IRequest,
+	 *      Exception)
+	 */
 	@Override
 	public void fail(IRequest iReq, Exception exception) {
 		System.err.println("The request to add a PlanningPokerGame failed.");

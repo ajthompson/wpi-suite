@@ -1,12 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2012-2014 -- WPI Suite
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
- ******************************************************************************/
+ *******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.views;
 
 
@@ -24,6 +23,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
+/**
+ * @author Miguel
+ * @version $Revision: 1.0 $
+ */
 public class PlayingCardJPanel extends JPanel {
 
     private final int value;
@@ -36,6 +39,11 @@ public class PlayingCardJPanel extends JPanel {
     private final JPanel innerCardPanel;
     private final JLabel cardLabel;
 
+    /**
+     * Constructor for PlayingCardJPanel.
+     * @param value int
+     * @param selected boolean
+     */
     public PlayingCardJPanel(int value, boolean selected) {
         this.value = value;
         this.selected = selected;
@@ -101,6 +109,10 @@ public class PlayingCardJPanel extends JPanel {
         this.setBorder(BorderFactory.createLineBorder(borderColor, 10));
     }
 
+    /**
+     * Method getValue.
+    
+     * @return int */
     public int getValue() {
         return (this.selected ? value : 0);
     }

@@ -1,17 +1,14 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2012-2014 -- WPI Suite
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
- ******************************************************************************/
+ *******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.view;
 
 import java.io.FileNotFoundException;
-
-
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,9 +23,9 @@ import edu.wpi.cs.wpisuitetng.modules.requirementmanager.models.characteristics.
 import edu.wpi.cs.wpisuitetng.modules.requirementmanager.models.characteristics.Transaction;
 
 /**
- * This class controls the exportation of requirements to a file as JSON.
+ * @author Miguel
+ * @version $Revision: 1.0 $
  */
-
 public class Exporter {
 
 	public Exporter() {
@@ -37,6 +34,8 @@ public class Exporter {
 	
 	/**
 	 * Exports the input list of selected requirements to a file as a string
+	 * @param listOfRequirementsToAdd DefaultListModel<Requirement>
+	 * @param filename String
 	 */
 	public void exportAsString(DefaultListModel<Requirement> listOfRequirementsToAdd, String filename) {
 		// Prepare file for exporting
@@ -92,6 +91,8 @@ public class Exporter {
 	
 	/**
 	 * Exports the input list of selected requirements to a file as a JSON
+	 * @param listOfRequirementsToAdd DefaultListModel<Requirement>
+	 * @param filename String
 	 */
 	public void exportAsJSON(DefaultListModel<Requirement> listOfRequirementsToAdd, String filename) {
 		// Prepare file for exporting

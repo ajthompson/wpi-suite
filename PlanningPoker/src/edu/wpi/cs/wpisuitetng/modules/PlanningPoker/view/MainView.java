@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
- ******************************************************************************/
+* Copyright (c) 2012-2014 -- WPI Suite
+*
+* All rights reserved. This program and the accompanying materials
+* are made available under the terms of the Eclipse Public License v1.0
+* which accompanies this distribution, and is available at
+* http://www.eclipse.org/legal/epl-v10.html
+* Contributor: team struct-by-lightning
+*******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.view;
 
 import java.awt.Component;
@@ -29,6 +29,7 @@ import javax.swing.JTabbedPane;
  * @author Zachary Zapatka
  * @author Miguel Mora
  *
+ * @version $Revision: 1.0 $
  */
 @SuppressWarnings("serial")
 public class MainView extends JTabbedPane {
@@ -63,11 +64,12 @@ public class MainView extends JTabbedPane {
 	/**
 	 * Overridden insertTab function to allow tab to close.
 	 *
-	 * @param title	Title of the tab
-	 * @param icon	Icon for the tab
-	 * @param component	the visible tab
-	 * @param tip	Showing mouse tip when hovering over tab
-	 * @param index	Location of the tab
+	
+	
+	
+	
+	
+	 * @param c Component
 	 */
 //	public void insertTab(String title, Icon icon, Component component,
 //			String tip, int index) {
@@ -104,15 +106,15 @@ public class MainView extends JTabbedPane {
 
 	/**
 	 * Method getPopup opens a window that asks if you want to close a tab.
-	 * @return JPopupMenu the popup window
-	 */
+	
+	 * @return JPopupMenu the popup window */
 	public JPopupMenu getPopup() {
 		return popup;
 	}
 	/**
 	 * Method getCloseAll is an internal component part of window builder .
-	 * @return JMenuItem
-	 */
+	
+	 * @return JMenuItem */
 	public JMenuItem getCloseAll() {
 		return closeAll;
 	}
@@ -120,8 +122,8 @@ public class MainView extends JTabbedPane {
 
 	/**
 	 * Method getCloseOthers is an internal component part of window builder .
-	 * @return JMenuItem
-	 */
+	
+	 * @return JMenuItem */
 	public JMenuItem getCloseOthers() {
 		return closeOthers;
 	}

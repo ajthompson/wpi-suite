@@ -19,10 +19,12 @@ import edu.wpi.cs.wpisuitetng.network.models.IRequest;
  * 
  * @author Alec Thompson - ajthompson
  * @version Apr 10, 2014
- */
+ **/
 public class GetDeckRequestObserver implements RequestObserver {
 
-	/** The controller linked to this RequestObserver */
+	/**
+	 * The controller linked to this RequestObserver *
+	 **/
 	private GetDeckController controller;
 
 	/**
@@ -30,7 +32,7 @@ public class GetDeckRequestObserver implements RequestObserver {
 	 * 
 	 * @param controller
 	 *            the controller used to retrieve Decks
-	 */
+	 **/
 	public GetDeckRequestObserver(GetDeckController controller) {
 		this.controller = controller;
 	}
@@ -40,7 +42,7 @@ public class GetDeckRequestObserver implements RequestObserver {
 	 * to the controller
 	 * 
 	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseSuccess(IRequest)
-	 */
+	 **/
 	@Override
 	public void responseSuccess(IRequest iReq) {
 		// convert the JASON array of Decks to a Deck array
@@ -57,8 +59,9 @@ public class GetDeckRequestObserver implements RequestObserver {
 	 * @param iReq
 	 *            the Request that was made to the server
 	 * 
+	 * 
 	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseError(edu.wpi.cs.wpisuitetng.network.models.IRequest)
-	 */
+	 **/
 	@Override
 	public void responseError(IRequest iReq) {
 		System.err
@@ -74,9 +77,10 @@ public class GetDeckRequestObserver implements RequestObserver {
 	 * @param exception
 	 *            the Exception received by the observer
 	 * 
+	 * 
 	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#fail(edu.wpi.cs.wpisuitetng.network.models.IRequest,
 	 *      java.lang.Exception)
-	 */
+	 **/
 	@Override
 	public void fail(IRequest iReq, Exception exception) {
 		System.err.println("The attempt to retrieve a Deck has failed.");

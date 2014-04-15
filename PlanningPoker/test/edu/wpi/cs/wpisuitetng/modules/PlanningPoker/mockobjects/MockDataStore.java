@@ -1,12 +1,14 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2012-2014 -- WPI Suite
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
- ******************************************************************************/
+ * Contributors: Team Rolling Thunder
+ * 				 team struct-by-lightning
+ *******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.mockobjects;
 
 import java.lang.reflect.InvocationTargetException;
@@ -37,9 +39,9 @@ public class MockDataStore implements Data {
 	 * Static method to create an empty MockDataStore if one does not already
 	 * exist, otherwise just return the the instance
 	 * 
+	
 	 * @return the instance of the MockDataStore if it exists, otherwise create
-	 *         an empty MockDataStore
-	 */
+	 *         an empty MockDataStore */
 	public static MockDataStore getInstance() {
 		if (instance == null)
 			instance = new MockDataStore();
@@ -53,8 +55,8 @@ public class MockDataStore implements Data {
 	 * 
 	 * @param objects
 	 *            Set of objects to store in the MockDataStore
-	 * @return the instance of the MockDataStore
-	 */
+	
+	 * @return the instance of the MockDataStore */
 	public static MockDataStore getInstance(Set<Object> objects) {
 		if (instance == null)
 			instance = new MockDataStore(objects);
@@ -82,8 +84,10 @@ public class MockDataStore implements Data {
 	/**
 	 * Add an object to the database
 	 * 
-	 * @see edu.wpi.cs.wpisuitetng.database.Data#save(java.lang.Object)
-	 */
+	
+	 * @param aModel T
+	
+	 * @return boolean * @see edu.wpi.cs.wpisuitetng.database.Data#save(java.lang.Object) */
 	@Override
 	public <T> boolean save(T aModel) {
 		objects.add(aModel);
@@ -91,9 +95,12 @@ public class MockDataStore implements Data {
 	}
 
 	/**
-	 * @see edu.wpi.cs.wpisuitetng.database.Data#save(java.lang.Object,
-	 *      edu.wpi.cs.wpisuitetng.modules.core.models.Project)
-	 */
+	
+	 * @param aModel T
+	 * @param aProject Project
+	
+	 * @return boolean * @see edu.wpi.cs.wpisuitetng.database.Data#save(java.lang.Object,
+	 *      edu.wpi.cs.wpisuitetng.modules.core.models.Project) */
 	@Override
 	public <T> boolean save(T aModel, Project aProject) {
 		((Model) aModel).setProject(aProject);
@@ -113,9 +120,11 @@ public class MockDataStore implements Data {
 	 * @param theGivenValue
 	 *            the value to filter by
 	 * 
-	 * @see edu.wpi.cs.wpisuitetng.database.Data#retrieve(java.lang.Class,
-	 *      java.lang.String, java.lang.Object)
-	 */
+	
+	
+	
+	 * @return List<Model> * @throws WPISuiteException * @see edu.wpi.cs.wpisuitetng.database.Data#retrieve(java.lang.Class,
+	 *      java.lang.String, java.lang.Object) */
 	@Override
 	public List<Model> retrieve(Class anObjectQueried, String aFieldName,
 			Object theGivenValue) throws WPISuiteException {
@@ -172,8 +181,10 @@ public class MockDataStore implements Data {
 	/**
 	 * Deletes an object from the MockDataStore and returns it
 	 * 
-	 * @return the deleted object
-	 * @see edu.wpi.cs.wpisuitetng.database.Data#delete(java.lang.Object)
+	
+	
+	 * @param aTNG T
+	 * @return the deleted object * @see edu.wpi.cs.wpisuitetng.database.Data#delete(java.lang.Object) * @see edu.wpi.cs.wpisuitetng.database.Data#delete(T)
 	 */
 	@Override
 	public <T> T delete(T aTNG) {
@@ -202,8 +213,9 @@ public class MockDataStore implements Data {
 	 * 
 	 * @param aSample
 	 *            the object of the same type as those to be retrieved.
-	 * @see edu.wpi.cs.wpisuitetng.database.Data#retrieveAll(java.lang.Object)
-	 */
+	
+	
+	 * @return List<T> * @see edu.wpi.cs.wpisuitetng.database.Data#retrieveAll(java.lang.Object) */
 	@Override
 	public <T> List<T> retrieveAll(T aSample) {
 		List<T> all = new ArrayList<T>();
@@ -215,9 +227,12 @@ public class MockDataStore implements Data {
 	}
 
 	/**
-	 * @see edu.wpi.cs.wpisuitetng.database.Data#retrieveAll(java.lang.Object,
-	 *      edu.wpi.cs.wpisuitetng.modules.core.models.Project)
-	 */
+	
+	 * @param aSample T
+	 * @param aProject Project
+	
+	 * @return List<Model> * @see edu.wpi.cs.wpisuitetng.database.Data#retrieveAll(java.lang.Object,
+	 *      edu.wpi.cs.wpisuitetng.modules.core.models.Project) */
 	@Override
 	public <T> List<Model> retrieveAll(T aSample, Project aProject) {
 		// TODO Auto-generated method stub
@@ -227,8 +242,10 @@ public class MockDataStore implements Data {
 	/**
 	 * Deletes all models of a given class from the MockDataStore
 	 * 
-	 * @return List of all objects deleted
-	 * @see edu.wpi.cs.wpisuitetng.database.Data#deleteAll(java.lang.Object)
+	
+	
+	 * @param aSample T
+	 * @return List of all objects deleted * @see edu.wpi.cs.wpisuitetng.database.Data#deleteAll(java.lang.Object) * @see edu.wpi.cs.wpisuitetng.database.Data#deleteAll(T)
 	 */
 	@Override
 	public <T> List<T> deleteAll(T aSample) {
@@ -243,9 +260,12 @@ public class MockDataStore implements Data {
 	}
 
 	/**
-	 * @see edu.wpi.cs.wpisuitetng.database.Data#deleteAll(java.lang.Object,
-	 *      edu.wpi.cs.wpisuitetng.modules.core.models.Project)
-	 */
+	
+	 * @param aSample T
+	 * @param aProject Project
+	
+	 * @return List<Model> * @see edu.wpi.cs.wpisuitetng.database.Data#deleteAll(java.lang.Object,
+	 *      edu.wpi.cs.wpisuitetng.modules.core.models.Project) */
 	@Override
 	public <T> List<Model> deleteAll(T aSample, Project aProject) {
 		// TODO Auto-generated method stub

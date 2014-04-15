@@ -1,11 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2013 WPI-Suite
+ * Copyright (c) 2013-2014 WPI-Suite
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
- * Contributors: Team Rolling Thunder
+ * Contributors: Team Rolling Thunder, struct-by-lightning
  ******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.buttons;
 
@@ -27,25 +27,31 @@ import edu.wpi.cs.wpisuitetng.modules.PlanningPoker.controllers.MainViewControll
 import edu.wpi.cs.wpisuitetng.modules.PlanningPoker.views.MainView;
 
 /**
- * @author Batyr, Christian, Francisco
+ * @author Batyr, cgwalker, Francisco
  * @version $Revision: 1.0 $
+ * Sets up toolbar buttons (including the new requirement image) for the main view
+ * and handles the initial "Create Game Button" click. 
+ * 
  */
 public class PlanningPokerButtonsPanel extends ToolbarGroupView {
 
 	// initialize the main view toolbar buttons
-	private final JButton newGameButton = new JButton("<html>Create New Game</html>");
+	private final JButton newGameButton = new JButton(
+			"<html>Create New Game</html>");
 	private final JPanel contentPanel = new JPanel();
 
 	public PlanningPokerButtonsPanel() {
 		super("");
 
-		this.contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.X_AXIS));
+		this.contentPanel.setLayout(new BoxLayout(contentPanel,
+				BoxLayout.X_AXIS));
 		this.setPreferredWidth(250);
 
 		this.newGameButton.setHorizontalAlignment(SwingConstants.CENTER);
 
 		try {
-			final Image img = ImageIO.read(getClass().getResource("new_req.png"));
+			final Image img = ImageIO.read(getClass()
+					.getResource("new_req.png"));
 			this.newGameButton.setIcon(new ImageIcon(img));
 
 		} catch (IOException ex) {
@@ -69,6 +75,7 @@ public class PlanningPokerButtonsPanel extends ToolbarGroupView {
 
 	/**
 	 * Method getnewGameButton.
+	 * 
 	 * 
 	 * @return JButton
 	 */

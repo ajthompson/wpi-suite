@@ -18,6 +18,9 @@ import edu.wpi.cs.wpisuitetng.janeway.modules.IJanewayModule;
 import edu.wpi.cs.wpisuitetng.janeway.modules.JanewayTabModel;
 import edu.wpi.cs.wpisuitetng.modules.PlanningPoker.views.MainView;
 
+/**
+ * This is the planning poker module. It initializes the tabs.
+ */
 public class PlanningPoker implements IJanewayModule {
 
 	private List<JanewayTabModel> tabs;
@@ -30,19 +33,30 @@ public class PlanningPoker implements IJanewayModule {
 		// Initialize the list of tabs (however, this module has only one tab).
 		tabs = new ArrayList<JanewayTabModel>();
 
-		// TODO: If user has not provided contact info, show splash view instead.
+		// TODO: If user has not provided contact info, show splash view
+		// instead.
 		MainView.getController().activateView();
 
 		// Create a tab model that contains the toolbar panel and the main
 		// content panel
-		JanewayTabModel tab = new JanewayTabModel(this.getName(), new ImageIcon(),
-				PlanningPoker.toolbarComponent, PlanningPoker.mainComponent);
+		JanewayTabModel tab = new JanewayTabModel(this.getName(),
+				new ImageIcon(), PlanningPoker.toolbarComponent,
+				PlanningPoker.mainComponent);
 
 		// Add the tab to the list of tabs owned by this module
 		tabs.add(tab);
 	}
 
-	public static void updateComponents(JComponent toolbarComponent, JComponent mainComponent) {
+	/**
+	 * Method updateComponents.
+	 * 
+	 * @param toolbarComponent
+	 *            JComponent
+	 * @param mainComponent
+	 *            JComponent
+	 */
+	public static void updateComponents(JComponent toolbarComponent,
+			JComponent mainComponent) {
 		PlanningPoker.toolbarComponent = toolbarComponent;
 		PlanningPoker.mainComponent = mainComponent;
 	}

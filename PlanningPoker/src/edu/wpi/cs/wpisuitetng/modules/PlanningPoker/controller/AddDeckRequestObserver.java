@@ -44,6 +44,7 @@ public class AddDeckRequestObserver implements RequestObserver {
 	 * @param iReq
 	 *            the request that was made to the controller
 	 * 
+	 * 
 	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseSuccess(edu.wpi
 	 *      .cs.wpisuitetng.network.models.IRequest)
 	 */
@@ -62,7 +63,8 @@ public class AddDeckRequestObserver implements RequestObserver {
 	 * 
 	 * @param iReq
 	 *            the request that was made
-	 *            
+	 * 
+	 * 
 	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#responseError(edu.wpi.
 	 *      cs.wpisuitetng.network.models.IRequest)
 	 */
@@ -80,7 +82,8 @@ public class AddDeckRequestObserver implements RequestObserver {
 	 *            the request that was made
 	 * @param exception
 	 *            the exception that occurred
-	 *            
+	 * 
+	 * 
 	 * @see edu.wpi.cs.wpisuitetng.network.RequestObserver#fail(edu.wpi.cs.wpisuitetng
 	 *      .network.models.IRequest, java.lang.Exception)
 	 */

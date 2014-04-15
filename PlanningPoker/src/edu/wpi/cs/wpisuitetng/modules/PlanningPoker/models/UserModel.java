@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2012-2014 -- WPI Suite
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
- ******************************************************************************/
+ * Contributor: team struct-by-lightning
+ *******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.models;
 
 import java.util.ArrayList;
@@ -25,6 +25,7 @@ import edu.wpi.cs.wpisuitetng.modules.core.models.User;
  * 
  * @author Alec Thompson
  * 
+ * @version $Revision: 1.0 $
  */
 public class UserModel extends AbstractListModel<User> {
 	/**
@@ -45,8 +46,8 @@ public class UserModel extends AbstractListModel<User> {
 	}
 
 	/**
-	 * @return the instance of the User model singleton
-	 */
+	
+	 * @return the instance of the User model singleton */
 	public static UserModel getInstance() {
 		if (instance == null) {
 			instance = new UserModel();
@@ -70,8 +71,8 @@ public class UserModel extends AbstractListModel<User> {
 	 * 
 	 * @param id
 	 *            the ID number of the User to be returned
-	 * @return the User for the ID or null if the User is not found
-	 */
+	
+	 * @return the User for the ID or null if the User is not found */
 	public User getUser(int id) {
 		// iterate through the list of Users until id is found
 		for (int i = 0; i < this.Users.size(); i++) {
@@ -101,8 +102,9 @@ public class UserModel extends AbstractListModel<User> {
 	/**
 	 * Provides the number of elements in the list of Users for the project.
 	 * 
-	 * @return the number of Users in the project
-	 * @see javax.swing.ListModel#getSize()
+	
+	
+	 * @return the number of Users in the project * @see javax.swing.ListModel#getSize() * @see javax.swing.ListModel#getSize()
 	 */
 	public int getSize() {
 		return Users.size();
@@ -112,8 +114,10 @@ public class UserModel extends AbstractListModel<User> {
 	 * This function takes an index and finds the User in the list of Users for
 	 * the project.
 	 * 
-	 * @return the User associated with the provided index
-	 * @see javax.swing.ListModel@getElementAt(int)
+	
+	
+	 * @param index int
+	 * @return the User associated with the provided index * @see javax.swing.ListModel@getElementAt(int) * @see javax.swing.ListModel#getElementAt(int)
 	 */
 	public User getElementAt(int index) {
 		return Users.get(Users.size() - 1 - index);
@@ -151,8 +155,8 @@ public class UserModel extends AbstractListModel<User> {
 	/**
 	 * Returns the list of Users
 	 *
-	 * @return the Users held within the UserModel
-	 */
+	
+	 * @return the Users held within the UserModel */
 	public List<User> getUsers() {
 		return Users;
 	}

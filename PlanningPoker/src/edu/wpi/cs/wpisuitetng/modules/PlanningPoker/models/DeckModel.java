@@ -35,8 +35,8 @@ public class DeckModel extends AbstractListModel<Deck> {
 	 * Retrieves the singleton instance of the DeckModel, or creates it if it
 	 * does not yet exist.
 	 * 
-	 * @return the singleton instance of the DeckModel
-	 */
+	
+	 * @return the singleton instance of the DeckModel */
 	public static DeckModel getInstance() {
 		if (instance == null)
 			instance = new DeckModel();
@@ -65,8 +65,8 @@ public class DeckModel extends AbstractListModel<Deck> {
 	 * 
 	 * @param name
 	 *            the name of the Deck
-	 * @return the Deck with the given name, or null if the Deck does not exist
-	 */
+	
+	 * @return the Deck with the given name, or null if the Deck does not exist */
 	public Deck getDeck(String name) {
 		// iterate through the list of decks until the name is found
 		for (Deck d : Decks) {
@@ -96,8 +96,9 @@ public class DeckModel extends AbstractListModel<Deck> {
 	/**
 	 * Provides the number of elements in the list of Decks for the project.
 	 * 
-	 * @return the number of Decks in the project
-	 * @see javax.swing.ListModel#getSize()
+	
+	
+	 * @return the number of Decks in the project * @see javax.swing.ListModel#getSize() * @see javax.swing.ListModel#getSize()
 	 */
 	public int getSize() {
 		return Decks.size();
@@ -109,8 +110,9 @@ public class DeckModel extends AbstractListModel<Deck> {
 	 * @param index
 	 *            the index from which you want to retrieve a Deck
 	 * 
-	 * @return the Deck at the given index
-	 * @see javax.swing.ListModel#getElementAt(int)
+	
+	
+	 * @return the Deck at the given index * @see javax.swing.ListModel#getElementAt(int) * @see javax.swing.ListModel#getElementAt(int)
 	 */
 	@Override
 	public Deck getElementAt(int index) {
@@ -151,8 +153,8 @@ public class DeckModel extends AbstractListModel<Deck> {
 	/**
 	 * Returns the list of Decks
 	 * 
-	 * @return the Decks held within the DeckModel
-	 */
+	
+	 * @return the Decks held within the DeckModel */
 	public List<Deck> getDecks() {
 		return Decks;
 	}

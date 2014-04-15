@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
- ******************************************************************************/
+* Copyright (c) 2012-2014 -- WPI Suite
+*
+* All rights reserved. This program and the accompanying materials
+* are made available under the terms of the Eclipse Public License v1.0
+* which accompanies this distribution, and is available at
+* http://www.eclipse.org/legal/epl-v10.html
+* Contributor: team struct-by-lightning
+*******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.models;
 
 import java.lang.reflect.Type;
@@ -28,11 +28,24 @@ import com.google.gson.JsonParseException;
 
 import edu.wpi.cs.wpisuitetng.modules.core.models.UserDeserializer;
 
+/**
+ * @author Miguel
+ * @version $Revision: 1.0 $
+ */
 public class PlanningPokerDeserializer implements JsonDeserializer<PlanningPokerGame> {
 
 	private static final Logger logger = Logger
 			.getLogger(UserDeserializer.class.getName());
 
+	/**
+	 * Method deserialize.
+	 * @param ppmElement JsonElement
+	 * @param ppmType Type
+	 * @param context JsonDeserializationContext
+	
+	
+	
+	 * @return PlanningPokerGame * @throws JsonParseException * @see com.google.gson.JsonDeserializer#deserialize(JsonElement, Type, JsonDeserializationContext) */
 	@Override
 	public PlanningPokerGame deserialize(JsonElement ppmElement, Type ppmType,
 			JsonDeserializationContext context) throws JsonParseException {

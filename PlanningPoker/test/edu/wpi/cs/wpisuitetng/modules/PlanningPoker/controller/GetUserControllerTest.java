@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 /**
- * Description
+ * Class to test the user controller's functionality.
  *
  * @author Alec Thompson - ajthompson
  * @version Apr 4, 2014

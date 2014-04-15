@@ -1,11 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2013 WPI-Suite
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
+ * Contributors: Struct-By-Lightning
  ******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.views;
 
@@ -73,6 +73,8 @@ import edu.wpi.cs.wpisuitetng.modules.requirementmanager.models.RequirementModel
 /**
  * CreateGameView creates the game view for a new game 
  *
+ * @author Miguel
+ * @version $Revision: 1.0 $
  */
 public class CreateGameView {
 	
@@ -83,6 +85,10 @@ public class CreateGameView {
 	private static CreateGameView singleInstance;
 
 	
+	/**
+	 * Method getSingleInstance.
+	
+	 * @return CreateGameView */
 	private static CreateGameView getSingleInstance() {
 		if (CreateGameView.singleInstance == null) {
 			CreateGameView.singleInstance = new CreateGameView();
@@ -91,6 +97,10 @@ public class CreateGameView {
 		return CreateGameView.singleInstance;
 	}
 	
+	/**
+	 * Method getController.
+	
+	 * @return CreateGameViewController */
 	public static CreateGameViewController getController() {
 		return CreateGameView.getSingleInstance().controller;
 	}
@@ -108,8 +118,9 @@ public class CreateGameView {
 	
 /** 
  * creates the view for the create new game window
- * @return
- */
+
+
+ * @return JPanel */
 	public JPanel newCreateGamePanel() {
 		
 		

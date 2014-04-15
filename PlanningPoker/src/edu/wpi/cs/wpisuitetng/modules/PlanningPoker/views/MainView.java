@@ -1,11 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2013 WPI-Suite
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
+ * Contributors: Struct-By-Lightning
  ******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.views;
 
@@ -17,6 +17,10 @@ import edu.wpi.cs.wpisuitetng.modules.PlanningPoker.controllers.MainViewControll
 import edu.wpi.cs.wpisuitetng.modules.PlanningPoker.view.ToolbarView;
 
 
+/**
+ * @author Miguel
+ * @version $Revision: 1.0 $
+ */
 public class MainView {
 	
 	/**
@@ -25,6 +29,10 @@ public class MainView {
 	
 	private static MainView singleInstance;
 	
+	/**
+	 * Method getSingleInstance.
+	
+	 * @return MainView */
 	private static MainView getSingleInstance() {
 		if (MainView.singleInstance == null) {
 			MainView.singleInstance = new MainView();
@@ -33,6 +41,10 @@ public class MainView {
 		return MainView.singleInstance;
 	}
 	
+	/**
+	 * Method getController.
+	
+	 * @return MainViewController */
 	public static MainViewController getController() {
 		return MainView.getSingleInstance().controller;
 	}

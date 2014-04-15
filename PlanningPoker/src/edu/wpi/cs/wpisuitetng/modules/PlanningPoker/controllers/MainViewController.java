@@ -1,11 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2013 WPI-Suite
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
+ * Contributors: Struct-By-Lightning
  ******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.controllers;
 
@@ -39,6 +39,7 @@ import edu.wpi.cs.wpisuitetng.modules.requirementmanager.controller.GetRequireme
  * poker module.
  * 
  * @author arose
+ * @version $Revision: 1.0 $
  */
 public class MainViewController {
 
@@ -48,6 +49,12 @@ public class MainViewController {
 	private JTabbedPane tabPane;
 	private JTree gameTree;
 
+	/**
+	 * Constructor for MainViewController.
+	 * @param gameTree JTree 
+	 * @param tabPane JTabbedPane 
+	 * @param toolbar JToolBar
+	 */
 	public MainViewController(JTree gameTree, JTabbedPane tabPane, JToolBar toolbar) {
 		this.gameTree = gameTree;
 		this.tabPane = tabPane;
@@ -89,6 +96,11 @@ public class MainViewController {
 		PlanningPoker.updateComponents(this.toolbar, this.tabPane);
 	}
 
+	/**
+	 * Method addCloseableTab.
+	 * @param tabName String
+	 * @param tabPanel JPanel
+	 */
 	public void addCloseableTab(String tabName, JPanel tabPanel) {
 		this.tabPane.addTab(tabName, tabPanel);
 		this.tabPane.setTabComponentAt(this.tabPane.indexOfComponent(tabPanel),
@@ -160,6 +172,10 @@ public class MainViewController {
 		}
 	}
 
+	/**
+	 * Method gameWasDoubleClicked.
+	 * @param game PlanningPokerGame
+	 */
 	public void gameWasDoubleClicked(PlanningPokerGame game) {
 		
 		MainViewController.activeGame = game;
@@ -172,6 +188,10 @@ public class MainViewController {
 		}
 	}
 
+	/**
+	 * Method getGameTree.
+	
+	 * @return JTree */
 	private JTree getGameTree() {
 		return this.gameTree;
 	}

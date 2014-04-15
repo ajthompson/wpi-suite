@@ -36,10 +36,10 @@ public class GetPlanningPokerVoteController implements ActionListener {
 	 * Constructs the controller given a PlanningPokerVoteModel
 	 */
 	private GetPlanningPokerVoteController() {
-		
+
 		observer = new GetPlanningPokerVoteRequestObserver(this);
 	}
-	
+
 	/**
 	
 	 * @return the instance of the GetPlanningPokerGameController or creates one if it does not
@@ -50,7 +50,7 @@ public class GetPlanningPokerVoteController implements ActionListener {
 		{
 			instance = new GetPlanningPokerVoteController();
 		}
-		
+
 		return instance;
 	}
 
@@ -64,7 +64,7 @@ public class GetPlanningPokerVoteController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		this.retrievePlanningPokerVote();
 	}
-	
+
 	/**
 	 * Sends an HTTP request to retrieve all PlanningPokerGames
 	 */
@@ -84,12 +84,19 @@ public class GetPlanningPokerVoteController implements ActionListener {
 		final Request request = Network.getInstance().makeRequest("planningpoker/planningpokervote" /*+ new PlanningPokerVote(gameName, userName, 0, requirementID).getID()*/, HttpMethod.GET); // GET == read
 		request.addObserver(observer); // add an observer to process the response
 		request.send(); // send the request
+		
+		try {
+			Thread.sleep(150);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if(request.getResponse() != null) {
 			//return Integer.MIN_VALUE;
 			PlanningPokerVote[] a = PlanningPokerVote.fromJsonArray(request.getResponse().getBody());
 			PlanningPokerVote ret = new PlanningPokerVote(null, null, 0, 0);
 			for(PlanningPokerVote v : a) {
-				if(v.getID().equals(userName + ":" + gameName + ":" + requirementID)) {
+				if(v.getID().equalsIgnoreCase(gameName + ":" + userName + ":" + requirementID)) {
 						ret = v;
 				}
 			}

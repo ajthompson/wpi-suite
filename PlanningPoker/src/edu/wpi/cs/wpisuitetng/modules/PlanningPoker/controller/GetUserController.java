@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2013-2014 WPI-Suite
+ * Copyright (c) 2012-2014 -- WPI Suite
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: Team Rolling Thunder, struct-by-lightning
- ******************************************************************************/
+ * Contributor: team struct-by-lightning
+ *******************************************************************************/
 package edu.wpi.cs.wpisuitetng.modules.PlanningPoker.controller;
 
 import java.awt.event.ActionEvent;
@@ -21,6 +21,7 @@ import edu.wpi.cs.wpisuitetng.network.models.HttpMethod;
 /**
  * @author Alec Thompson
  * 
+ * @version $Revision: 1.0 $
  */
 public class GetUserController implements ActionListener {
 
@@ -32,9 +33,9 @@ public class GetUserController implements ActionListener {
 	}
 
 	/**
+	
 	 * @return the instance of the GetUserEmailsController or creates one if it
-	 *         doesn't exist
-	 */
+	 *         doesn't exist */
 	public static GetUserController getInstance() {
 		if (instance == null) {
 			instance = new GetUserController();
@@ -50,8 +51,8 @@ public class GetUserController implements ActionListener {
 	 * @param e
 	 *            ActionEvent
 	 * 
-	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-	 */
+	
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent) */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// Send a request to the core to get this email
@@ -74,7 +75,8 @@ public class GetUserController implements ActionListener {
 	/**
 	 * Add the given Users to the local model (they were received from the core
 	 * 
-	 * @param users array of Users received from the server
+	
+	 * @param Users array of Users received from the server
 	 */
 	public void receivedUser(User[] Users) {
 		// empty the local model to eliminate duplications
