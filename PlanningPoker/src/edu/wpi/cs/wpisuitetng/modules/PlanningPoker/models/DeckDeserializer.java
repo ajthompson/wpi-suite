@@ -59,7 +59,7 @@ public class DeckDeserializer implements JsonDeserializer<Deck> {
 		String deckName = deflated.get("deckName").getAsString();
 		List<Integer> cards = null;
 
-		JsonArray jsonCards = null;
+		JsonArray jsonCards = new JsonArray();
 
 		if (deflated.has("cards")) {
 			try {

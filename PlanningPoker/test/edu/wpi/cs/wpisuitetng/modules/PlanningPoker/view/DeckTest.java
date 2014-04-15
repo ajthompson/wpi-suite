@@ -334,6 +334,8 @@ public class DeckTest {
 		Deck test = new Deck("test", cardList);
 		String serialized = test.toJSON();
 		
+		System.out.println(serialized);
+		
 		assertTrue(serialized.contains("deckName"));
 		assertTrue(serialized.contains("test"));
 		assertTrue(serialized.contains("cards"));
