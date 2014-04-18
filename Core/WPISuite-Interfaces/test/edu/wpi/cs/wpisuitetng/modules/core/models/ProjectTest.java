@@ -179,6 +179,8 @@ public class ProjectTest {
 	public void testProjectToJson() {
 		String deflated = p3.toJSON();
 		
+		System.out.println(deflated);
+		
 		assertTrue(deflated.startsWith("{"));
 		assertTrue(deflated.endsWith("}"));
 		
