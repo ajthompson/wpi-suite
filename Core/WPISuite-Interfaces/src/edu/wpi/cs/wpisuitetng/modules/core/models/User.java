@@ -13,6 +13,9 @@
 
 package edu.wpi.cs.wpisuitetng.modules.core.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.gson.*;
 
 import edu.wpi.cs.wpisuitetng.modules.AbstractModel;
@@ -244,6 +247,18 @@ public class User extends AbstractModel
 		gson = builder.create();
 		
 		return gson.fromJson(json, User.class);
+	}
+	
+	public static User[] fromJSONArray(String jsonArr) {
+		UserDeserializer ud = new UserDeserializer();
+		JsonArray array = new JsonParser().parse(jsonArr).getAsJsonArray();
+		List<User> users = new ArrayList<User>();
+		
+		for (JsonElement json : array) {
+			users.add(ud.deserialize(json, null, null));
+		}
+		
+		return users.toArray(new User[0]);
 	}
 
 	@Override
