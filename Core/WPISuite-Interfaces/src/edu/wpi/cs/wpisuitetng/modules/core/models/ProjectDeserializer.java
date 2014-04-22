@@ -24,6 +24,7 @@ import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+import com.google.gson.JsonParser;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
@@ -80,13 +81,16 @@ public class ProjectDeserializer implements JsonDeserializer<Project> {
 		Project inflated = new Project(name, idNum, owner, team,
 				supportedModules);
 		
-		User[] tempTeam;
+		UserDeserializer ud = new UserDeserializer();
+		String tempTeam;
+		JsonArray teamArray;
 		
 		if (deflated.has("team")) {
-			tempTeam = User.fromJSONArray(isolateTeam(deflated.toString()));
+			tempTeam = isolateTeam(deflated.toString());
+			teamArray = new JsonParser().parse(tempTeam).getAsJsonArray();
 			
-			for (User u : tempTeam) {
-				inflated.addTeamMember(u);
+			for (JsonElement json : teamArray) {
+				inflated.addTeamMember(ud.deserialize(json, null, null));
 			}
 		}
 
