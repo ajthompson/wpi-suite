@@ -24,6 +24,7 @@ import com.google.gson.JsonSyntaxException;
 
 import edu.wpi.cs.wpisuitetng.modules.core.models.Project;
 import edu.wpi.cs.wpisuitetng.modules.core.models.ProjectDeserializer;
+import edu.wpi.cs.wpisuitetng.modules.core.models.User;
 
 /**
  * Tests for the UserDeserializer class.
@@ -86,5 +87,34 @@ public class ProjectDeserializerTest {
 		Project inflated = deserializer.fromJson(jsonProject, Project.class); // exception expected.
 		
 		fail("exception not thrown");
+	}
+	
+	@Test
+	public void testProjectFromJson() {
+		// A full project json
+		String json = "{\"name\":\"calendar\",\"idNum\":\"proj3\",\"owner\":{\"idNum\":7,\"username\":\"jbond\",\"name\":\"James Bond\",\"role\":\"USER\",\"email\":\"jbond@test.com\"},\"supportedModules\":[\"defecttracker\",\"postboard\"],\"team\":[{\"idNum\":7,\"username\":\"jbond\",\"name\":\"James Bond\",\"role\":\"USER\",\"email\":\"jbond@test.com\"},{\"idNum\":2,\"username\":\"mpenny\",\"name\":\"Money Penny\",\"role\":\"USER\",\"email\":\"mpenny@test.com\"},{\"idNum\":1,\"username\":\"q\",\"name\":\"Q\",\"role\":\"USER\",\"email\":\"whatup\"}]}";
+		Project test = Project.fromJSON(json);
+		// No supportedModules
+		String json2 = "{\"name\":\"calendar\",\"idNum\":\"proj3\",\"owner\":{\"idNum\":7,\"username\":\"jbond\",\"name\":\"James Bond\",\"role\":\"USER\",\"email\":\"jbond@test.com\"},\"team\":[{\"idNum\":7,\"username\":\"jbond\",\"name\":\"James Bond\",\"role\":\"USER\",\"email\":\"jbond@test.com\"},{\"idNum\":2,\"username\":\"mpenny\",\"name\":\"Money Penny\",\"role\":\"USER\",\"email\":\"mpenny@test.com\"},{\"idNum\":1,\"username\":\"q\",\"name\":\"Q\",\"role\":\"USER\",\"email\":\"whatup\"}]}";
+		Project test2 = Project.fromJSON(json2);
+		// No team or supportedModules
+		String json3 = "{\"name\":\"calendar\",\"idNum\":\"proj3\",\"owner\":{\"idNum\":7,\"username\":\"jbond\",\"name\":\"James Bond\",\"role\":\"USER\",\"email\":\"jbond@test.com\"}}";
+		Project test3 = Project.fromJSON(json2);
+
+		// test comparisons
+		assertTrue(test.getName().equals("calendar"));
+		assertTrue(test.getIdNum().equals("proj3"));
+		assertTrue(test.getOwner().getUsername().equals("jbond"));
+		assertTrue(test.getOwner().getName().equals("James Bond"));
+		assertEquals(7, test.getOwner().getIdNum());
+
+		/**
+		 * Check if each user field is not null. Throws null pointer exception
+		 * if the user itself is null
+		 */
+		for (User u : test.getTeam()) {
+			assertNotEquals(null, u.getName());
+			assertNotEquals(null, u.getUsername());
+		}
 	}
 }
